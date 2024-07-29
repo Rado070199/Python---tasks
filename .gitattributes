@@ -1,0 +1,67 @@
+# Zarządzanie końcami linii
+# Konwertuj końce linii na LF w repozytorium, a CRLF w lokalnych kopiach na Windows
+* text=auto eol=lf
+
+# Pliki binarne
+# Oznacz pliki jako binarne, aby Git nie próbował ich łączyć ani różnicować
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.rar binary
+
+# Pliki tekstowe
+# Ustaw końce linii na CRLF dla plików tekstowych w Windows
+*.txt text eol=crlf
+
+# Pliki konfiguracyjne edytora
+# Oznacz pliki konfiguracyjne edytora jako pliki binarne, aby uniknąć niechcianych zmian
+*.sublime-project binary
+*.sublime-workspace binary
+*.vscode/ binary
+.idea/ binary
+
+# Ustawienia diff dla plików YAML i JSON
+# Ignoruj białe znaki w porównaniach dla plików YAML i JSON
+*.yaml diff=yaml
+*.json diff=json
+
+# Ustawienia merge
+# Używaj prostego łączenia dla plików XML i JSON, w przypadku konfliktów
+*.xml merge=union
+*.json merge=union
+
+# Pliki z kodem źródłowym
+# Ignoruj białe znaki podczas porównań dla plików kodu źródłowego
+*.py diff=python
+*.java diff=java
+*.cpp diff=cpp
+*.c diff=c
+*.h diff=c
+
+# Filtr LFS (Large File Storage) dla dużych plików
+# Używaj Git LFS dla dużych plików binarnych
+*.psd filter=lfs
+*.iso filter=lfs
+
+# Pliki baz danych
+# Oznacz pliki baz danych jako binarne
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
+
+# Pliki logów
+# Ignoruj pliki logów w porównaniach
+*.log binary
+
+# Pliki temporarne i buildowe
+# Ignoruj pliki tymczasowe i buildowe
+*.tmp binary
+*.bak binary
+*.swp binary
+*.class binary
+*.o binary
+*.a binary
+*.so binary
